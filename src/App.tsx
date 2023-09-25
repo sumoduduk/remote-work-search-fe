@@ -1,7 +1,11 @@
+import NavigationBar from "./components/navigation-bar/NavigationBar";
+import { Outlet } from "react-router-dom";
+
 function App() {
   return (
-    <main className="bg-black flex text-white w-full h-screen">
-      <h1 className="text-4xl m-auto">Hello world</h1>
+    <main className="flex flex-col text-primary min-h-screen">
+      <NavigationBar />
+      <Outlet />
     </main>
   );
 }
