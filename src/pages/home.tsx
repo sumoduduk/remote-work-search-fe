@@ -2,8 +2,9 @@ import { Form, LoaderFunction, useLoaderData } from "react-router-dom";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { findJob } from "@/lib/findJob";
+import CardJob from "@/components/card-job";
 
-type JobType = {
+export type JobType = {
   link: string;
   price: string;
   title: string;
@@ -55,7 +56,13 @@ export const Home = () => {
         />
         <Button type="submit">Find</Button>
       </Form>
-      {dataJob.length > 0 && <div>{/* test */}</div>}
+      {dataJob.length > 0 && (
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+          {dataJob.map((elm, i) => (
+            <CardJob key={i} job={elm} />
+          ))}
+        </div>
+      )}
     </section>
   );
 };
