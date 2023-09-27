@@ -2,6 +2,7 @@ import {
   Card,
   CardContent,
   CardDescription,
+  CardFooter,
   CardHeader,
   CardTitle,
 } from "./ui/card";
@@ -15,16 +16,15 @@ type CardType = {
 const CardJob = ({ job }: CardType) => {
   const handleCopy = () => {
     navigator.clipboard.writeText(
-      `Remote Job Work : \n \n-${job.title} \n-${job.price} \n \n${job.link}`,
+      `Remote Job Work In the Last 2 Hours : \n \n- ${job.title} \n- ${job.price} \n \n${job.link}`,
     );
   };
 
   return (
-    <Card>
+    <Card className="flex flex-col">
       <CardHeader className="flex flex-row justify-between items-start gap-4">
         <div className="space-y-1 mt-3">
           <CardTitle>{job.price}</CardTitle>
-          <CardDescription>{job.title}</CardDescription>
         </div>
         <button
           onClick={handleCopy}
@@ -33,7 +33,10 @@ const CardJob = ({ job }: CardType) => {
           <ClipboardIcon className="h-4 w-4" />
         </button>
       </CardHeader>
-      <CardContent>
+      <CardContent className="flex-grow">
+        <CardDescription>{job.title}</CardDescription>
+      </CardContent>
+      <CardFooter>
         <div className="flex space-x-1 items-center text-sm text-muted-foreground">
           <div className="flex items-center space-x-3">
             <a
@@ -47,7 +50,7 @@ const CardJob = ({ job }: CardType) => {
             <LinkIcon className="h-3 w-3 mr-2" />
           </div>
         </div>
-      </CardContent>
+      </CardFooter>
     </Card>
   );
 };

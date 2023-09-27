@@ -4,7 +4,7 @@ import { NavigationMenu } from "./NavigationMenu";
 
 const mainNav = [
   {
-    title: "About Us",
+    title: "About",
     href: "/about",
   },
 ];

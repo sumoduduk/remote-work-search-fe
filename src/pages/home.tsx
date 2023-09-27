@@ -38,7 +38,7 @@ export const Home = () => {
   console.log("data job len", dataJob.length);
 
   return (
-    <section className="flex flex-col gap-16 items-center px-4 md:px-32">
+    <section className="flex container py-2 flex-col flex-grow gap-16 items-center px-4 md:px-32">
       <Form
         className="w-full flex gap-4 items-center"
         id="search-form"
@@ -57,7 +57,7 @@ export const Home = () => {
         <Button type="submit">Find</Button>
       </Form>
       {dataJob.length > 0 && (
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
           {dataJob.map((elm, i) => (
             <CardJob key={i} job={elm} />
           ))}
