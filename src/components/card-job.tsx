@@ -16,7 +16,7 @@ type CardType = {
 const CardJob = ({ job }: CardType) => {
   const handleCopy = () => {
     navigator.clipboard.writeText(
-      `Remote Job Work In the Last 2 Hours : \n \n- ${job.title} \n- ${job.price} \n \n${job.link}`,
+      `${job.title} \n- ${job.price} \n \n${job.link}`,
     );
   };
 

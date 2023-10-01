@@ -1,8 +1,15 @@
-import { Form, LoaderFunction, useLoaderData } from "react-router-dom";
+import {
+  Form,
+  LoaderFunction,
+  useLoaderData,
+  useNavigation,
+} from "react-router-dom";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { findJob } from "@/lib/findJob";
 import CardJob from "@/components/card-job";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
+import Spinner from "@/components/spinner";
 
 export type JobType = {
   link: string;
@@ -19,7 +26,6 @@ export const loader: LoaderFunction = async ({ request }) => {
   const url = new URL(request.url);
   const searchAllParams = url.searchParams;
   const keyword = searchAllParams.get("keyword");
-  console.log("keyword in loader", keyword);
 
   let dataJob: JobType[] = [];
 
@@ -33,9 +39,11 @@ export const loader: LoaderFunction = async ({ request }) => {
 
 export const Home = () => {
   const { keyword, dataJob } = useLoaderData() as LoaderHomeType;
+  const navigation = useNavigation();
 
-  console.log({ dataJob });
-  console.log("data job len", dataJob.length);
+  const isLoading =
+    navigation.location &&
+    new URLSearchParams(navigation.location.search).has("keyword");
 
   return (
     <section className="flex container py-2 flex-col flex-grow gap-16 items-center px-4 md:px-32">
@@ -63,6 +71,13 @@ export const Home = () => {
           ))}
         </div>
       )}
+      <Dialog open={isLoading}>
+        <DialogContent>
+          <div className="p-40">
+            <Spinner />
+          </div>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
