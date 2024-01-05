@@ -12,7 +12,7 @@ export function SiteFooter() {
               target="_blank"
               rel="noopener noreferrer"
               className="underline"
-              href="https://abdurachmaniqbal.me/"
+              href="https://abdurachmaniqbal.my.id/"
             >
               Iqbal Abdurachman
             </a>

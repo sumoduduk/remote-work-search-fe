@@ -24,11 +24,11 @@ export const AboutPage = () => {
           I'm a remote software developers. I love building useful products that
           help make working remotely easier. Kindly visit my other portofolio at{" "}
           <a
-            href="https://abdurachmaniqbal.me"
+            href="https://abdurachmaniqbal.my.id"
             target="_blank"
             className="underline text-white"
           >
-            abdurachmaniqbal.me
+            abdurachmaniqbal.my.id
           </a>
         </p>
       </div>
