@@ -1,3 +1,15 @@
+import { MetaFunction } from "@remix-run/node";
+
+export const meta: MetaFunction = () => {
+  return [
+    { title: "About | Remote Work Finder" },
+    {
+      name: "description",
+      content: "About page of Remote Work Finder Site",
+    },
+  ];
+};
+
 export default function AboutPage() {
   return (
     <div className="max-w-3xl m-auto p-4">

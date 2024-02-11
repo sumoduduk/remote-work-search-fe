@@ -11,6 +11,7 @@ import CardJob from "~/components/card-job";
 import { Dialog, DialogContent } from "~/components/ui/dialog";
 import Spinner from "~/components/spinner";
 import { JobType, LoaderHomeType } from "~/types/all";
+import { MetaFunction } from "@remix-run/node";
 
 export const clientLoader = async ({ request }: ClientLoaderFunctionArgs) => {
   const url = new URL(request.url);
@@ -25,6 +26,21 @@ export const clientLoader = async ({ request }: ClientLoaderFunctionArgs) => {
   }
 
   return { keyword, dataJob };
+};
+
+export const meta: MetaFunction = () => {
+  return [
+    { title: "Remote Work Finder" },
+    {
+      name: "description",
+      content: "Website is for user to find they desired remote worker",
+    },
+    { name: "author", content: "Iqbal Abdurachman" },
+    {
+      name: "keywords",
+      content: "remote work, designer job, remote job, USA job",
+    },
+  ];
 };
 
 export const Index = () => {
