@@ -1,28 +1,18 @@
 import {
+  ClientLoaderFunctionArgs,
   Form,
-  LoaderFunction,
   useLoaderData,
   useNavigation,
-} from "react-router-dom";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import { findJob } from "@/lib/findJob";
-import CardJob from "@/components/card-job";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
-import Spinner from "@/components/spinner";
+} from "@remix-run/react";
+import { Input } from "~/components/ui/input";
+import { Button } from "~/components/ui/button";
+import { findJob } from "~/lib/findJob";
+import CardJob from "~/components/card-job";
+import { Dialog, DialogContent } from "~/components/ui/dialog";
+import Spinner from "~/components/spinner";
+import { JobType, LoaderHomeType } from "~/types/all";
 
-export type JobType = {
-  link: string;
-  price: string;
-  title: string;
-};
-
-type LoaderHomeType = {
-  keyword: string;
-  dataJob: JobType[];
-};
-
-export const loader: LoaderFunction = async ({ request }) => {
+export const clientLoader = async ({ request }: ClientLoaderFunctionArgs) => {
   const url = new URL(request.url);
   const searchAllParams = url.searchParams;
   const keyword = searchAllParams.get("keyword");
@@ -37,7 +27,7 @@ export const loader: LoaderFunction = async ({ request }) => {
   return { keyword, dataJob };
 };
 
-export const Home = () => {
+export const Index = () => {
   const { keyword, dataJob } = useLoaderData() as LoaderHomeType;
   const navigation = useNavigation();
 
@@ -81,3 +71,5 @@ export const Home = () => {
     </section>
   );
 };
+
+export default Index;

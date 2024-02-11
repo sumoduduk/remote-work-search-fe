@@ -1,4 +1,4 @@
-export const AboutPage = () => {
+export default function AboutPage() {
   return (
     <div className="max-w-3xl m-auto p-4">
       <div className="mb-8">
@@ -34,4 +34,4 @@ export const AboutPage = () => {
       </div>
     </div>
   );
-};
+}

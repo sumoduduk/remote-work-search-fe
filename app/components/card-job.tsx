@@ -1,3 +1,4 @@
+import { JobType } from "~/types/all";
 import {
   Card,
   CardContent,
@@ -7,7 +8,6 @@ import {
   CardTitle,
 } from "./ui/card";
 import { ClipboardIcon, LinkIcon } from "lucide-react";
-import { JobType } from "@/pages/home";
 
 type CardType = {
   job: JobType;

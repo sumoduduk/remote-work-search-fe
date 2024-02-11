@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
-import { NavItem } from "@/types/nav";
-import { cn } from "@/lib/utils";
+import { NavItem } from "~/types/nav";
+import { cn } from "~/lib/utils";
 
 export interface MainNavProps {
   items?: NavItem[];

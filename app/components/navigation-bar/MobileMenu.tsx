@@ -1,5 +1,5 @@
-import { NavItem } from "@/types/nav";
-import { cn } from "@/lib/utils";
+import { NavItem } from "~/types/nav";
+import { cn } from "~/lib/utils";
 
 import { ModeToggle } from "../toggle-theme";
 import { Sheet, SheetContent } from "../ui/sheet";

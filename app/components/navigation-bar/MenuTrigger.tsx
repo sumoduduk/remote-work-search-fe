@@ -1,5 +1,5 @@
-import { Button } from "@/components/ui/button";
-import { SheetTrigger } from "@/components/ui/sheet";
+import { Button } from "~/components/ui/button";
+import { SheetTrigger } from "~/components/ui/sheet";
 
 const MenuTrigger = () => {
   return (
