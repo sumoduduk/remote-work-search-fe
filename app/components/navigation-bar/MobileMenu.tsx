@@ -4,7 +4,7 @@ import { cn } from "~/lib/utils";
 import { ModeToggle } from "../toggle-theme";
 import { Sheet, SheetContent } from "../ui/sheet";
 import MenuTrigger from "./MenuTrigger";
-import { Link } from "react-router-dom";
+import { Link } from "@remix-run/react";
 
 export interface MobileMenuProps {
   items?: NavItem[];
