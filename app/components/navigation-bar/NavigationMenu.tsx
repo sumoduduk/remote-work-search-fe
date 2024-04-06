@@ -1,7 +1,6 @@
-import { Link } from "react-router-dom";
-
 import { NavItem } from "~/types/nav";
 import { cn } from "~/lib/utils";
+import { Link } from "@remix-run/react";
 
 export interface MainNavProps {
   items?: NavItem[];
