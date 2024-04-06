@@ -15,8 +15,12 @@ type CardType = {
 
 const CardJob = ({ job }: CardType) => {
   const handleCopy = () => {
+    const url_part = job.link.split("/");
+    const last_part = url_part[url_part.length - 1];
+
+    const new_url = `https://abdurachmaniqbal.my.id/job?search=${last_part}`;
     navigator.clipboard.writeText(
-      `${job.title} \n- ${job.price} \n \n${job.link}`,
+      `${job.title} \n- ${job.price} \n \n${new_url}`,
     );
   };
 
