@@ -29,7 +29,6 @@ export default function App() {
           <SiteFooter />
           <ScrollRestoration />
           <Scripts />
-          <LiveReload />
         </ThemeProvider>
       </body>
     </html>
@@ -48,7 +47,6 @@ export function HydrateFallback() {
       <body>
         <p>Loading...</p>
         <Scripts />
-        <LiveReload />
       </body>
     </html>
   );
