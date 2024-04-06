@@ -27,3 +27,4 @@ dist-ssr
 /.cache
 /build
 /public/build
+pnpm-lock.yaml
