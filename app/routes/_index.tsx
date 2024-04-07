@@ -73,7 +73,7 @@ export const Index = () => {
       {dataJob.length > 0 && (
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
           {dataJob.map((elm, i) => (
-            <CardJob key={i} job={elm} />
+            <CardJob key={i} job={elm} cate={keyword} />
           ))}
         </div>
       )}
