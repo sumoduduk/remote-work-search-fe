@@ -11,16 +11,17 @@ import { ClipboardIcon, LinkIcon } from "lucide-react";
 
 type CardType = {
   job: JobType;
+  cate: string;
 };
 
-const CardJob = ({ job }: CardType) => {
+const CardJob = ({ job, cate }: CardType) => {
   const handleCopy = () => {
     const url_part = job.link.split("/");
     const last_part = url_part[url_part.length - 1];
 
     const new_url = `https://abdurachmaniqbal.my.id/job?search=${last_part}`;
     navigator.clipboard.writeText(
-      `${job.title} \n- ${job.price} \n \n${new_url}`,
+      `🏢 Work Category : ${cate.toUpperCase()}🔽  \n💼 ${job.title}\n \n💰 ${job.price}\n \n🔗 ${new_url}`,
     );
   };
 
