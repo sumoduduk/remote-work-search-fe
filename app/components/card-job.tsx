@@ -21,7 +21,7 @@ const CardJob = ({ job, cate }: CardType) => {
 
     const new_url = `https://abdurachmaniqbal.my.id/job?search=${last_part}`;
     navigator.clipboard.writeText(
-      `🏢 Work Category : ${cate.toUpperCase()}🔽  \n💼 ${job.title}\n \n💰 ${job.price}\n \n🔗 ${new_url}`,
+      `🏢 Job Category : ${cate.toUpperCase()}  \n💼 ${job.title}\n \n💰 ${job.price}\n \n🔗 ${new_url}`,
     );
   };
 
